@@ -1,0 +1,9 @@
+﻿<metadata>
+
+	<remove-node path="/api/package[@name='com.airbnb.lottie.parser']" />
+	<remove-node path="/api/package[@name='com.airbnb.lottie.animation.keyframe']/class[@name='BaseKeyframeAnimation']" />
+
+
+	<attr path="/api/package[@name='com.airbnb.lottie.model.animatable']/interface[@name='AnimatableValue']" name="visibility">public</attr>
+	
+</metadata>
