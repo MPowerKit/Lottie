@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Compatibility.Hosting;
-using MPowerKit.Lottie;
+﻿using MPowerKit.Lottie;
 
 namespace Sample
 {
@@ -11,21 +9,12 @@ namespace Sample
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .UseMauiCompatibility()
+                .UseMPowerKitLottie()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                })
-                .ConfigureMauiHandlers(h =>
-                {
-                    //h.AddHandler(typeof(AnimationView), typeof(AnimationViewRenderer));
-                    h.AddHandler(typeof(LottieView), typeof(LottieViewHandler));
                 });
-
-#if DEBUG
-            builder.Logging.AddDebug();
-#endif
 
             return builder.Build();
         }

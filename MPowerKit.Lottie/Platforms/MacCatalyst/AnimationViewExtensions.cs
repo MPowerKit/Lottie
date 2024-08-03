@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
+
 using Com.Airbnb.Lottie;
+
 using Foundation;
 
 namespace MPowerKit.Lottie;

@@ -1,55 +1,16 @@
 ﻿using AddressBook;
+
 using Com.Airbnb.Lottie;
+
 using Foundation;
+
 using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 
 namespace MPowerKit.Lottie;
 
-public class LottieViewHandler : ViewHandler<LottieView, CompatibleAnimationView>
+public partial class LottieViewHandler : ViewHandler<LottieView, CompatibleAnimationView>
 {
-    public static IPropertyMapper<LottieView, LottieViewHandler> LottieViewMapper = new PropertyMapper<LottieView, LottieViewHandler>(ViewMapper)
-    {
-        [LottieView.SourceProperty.PropertyName] = MapSource,
-        [LottieView.MinFrameProperty.PropertyName] = MapMinMaxFrame,
-        [LottieView.MaxFrameProperty.PropertyName] = MapMinMaxFrame,
-        [LottieView.MinProgressProperty.PropertyName] = MapMinMaxProgress,
-        [LottieView.MaxProgressProperty.PropertyName] = MapMinMaxProgress,
-        [LottieView.SpeedProperty.PropertyName] = MapSpeed,
-        [LottieView.RepeatModeProperty.PropertyName] = MapRepeatMode,
-        [LottieView.RepeatCountProperty.PropertyName] = MapRepeatMode,
-        [LottieView.AnimationFrameProperty.PropertyName] = MapAnimationFrame,
-        [LottieView.ProgressProperty.PropertyName] = MapProgress,
-        [LottieView.HardwareAccelerationProperty.PropertyName] = MapHardwareAcceleration,
-        //[LottieView.TintColorProperty.PropertyName] = MapTintColor,
-        [LottieView.AutoPlayProperty.PropertyName] = MapAutoPlay,
-    };
-
-    public static CommandMapper<LottieView, LottieViewHandler> LottieViewCommandMapper = new(ViewCommandMapper)
-    {
-        [nameof(LottieView.Play)] = MapPlay,
-        [nameof(LottieView.Pause)] = MapPause,
-        [nameof(LottieView.Stop)] = MapStop,
-        [nameof(LottieView.Resume)] = MapResume,
-    };
-
-    public LottieViewHandler()
-        : base(LottieViewMapper, LottieViewCommandMapper)
-    {
-    }
-
-    public LottieViewHandler(IPropertyMapper<LottieView, LottieViewHandler>? mapper)
-        : base(mapper ?? LottieViewMapper, LottieViewCommandMapper)
-    {
-
-    }
-
-    public LottieViewHandler(IPropertyMapper<LottieView, LottieViewHandler>? mapper, CommandMapper<LottieView, LottieViewHandler>? commandMapper)
-        : base(mapper ?? LottieViewMapper, commandMapper ?? LottieViewCommandMapper)
-    {
-
-    }
-
     protected override CompatibleAnimationView CreatePlatformView()
     {
         return new CompatibleAnimationView();

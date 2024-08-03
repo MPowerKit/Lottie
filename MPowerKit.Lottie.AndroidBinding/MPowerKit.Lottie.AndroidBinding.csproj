@@ -1,9 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net8.0-android</TargetFramework>
 		<SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>MPowerKit.Lottie.MaciOSBinding</Title>
+		<Version>6.4.1</Version>
+		<Authors>MPowerKit,Alex Dobrynin</Authors>
+		<Description>>Lottie library for Android that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
+		<Copyright>MPowerKit</Copyright>
+		<PackageProjectUrl>https://github.com/MPowerKit/Lottie</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/MPowerKit/Lottie</RepositoryUrl>
+		<PackageTags>lottie;image;animation;json;lottie maui;lottie android;adobe after effects</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -14,5 +26,20 @@
 
 	<ItemGroup>
 		<AndroidMavenLibrary Include="com.airbnb.android:lottie" Version="6.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 </Project>

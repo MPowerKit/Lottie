@@ -15,56 +15,12 @@ using Microsoft.Maui.Platform;
 
 namespace MPowerKit.Lottie;
 
-public class LottieViewHandler : ViewHandler<LottieView, LottieAnimationView>
+public partial class LottieViewHandler : ViewHandler<LottieView, LottieAnimationView>
 {
-    public static IPropertyMapper<LottieView, LottieViewHandler> LottieViewMapper = new PropertyMapper<LottieView, LottieViewHandler>(ViewMapper)
-    {
-        [LottieView.SourceProperty.PropertyName] = MapSource,
-        [LottieView.CacheCompositionProperty.PropertyName] = MapCacheComposition,
-        [LottieView.MinFrameProperty.PropertyName] = MapMinFrame,
-        [LottieView.MaxFrameProperty.PropertyName] = MapMaxFrame,
-        [LottieView.MinProgressProperty.PropertyName] = MapMinProgress,
-        [LottieView.MaxProgressProperty.PropertyName] = MapMaxProgress,
-        [LottieView.SpeedProperty.PropertyName] = MapSpeed,
-        [LottieView.RepeatModeProperty.PropertyName] = MapRepeatMode,
-        [LottieView.RepeatCountProperty.PropertyName] = MapRepeatMode,
-        [LottieView.AnimationFrameProperty.PropertyName] = MapAnimationFrame,
-        [LottieView.ProgressProperty.PropertyName] = MapProgress,
-        [LottieView.EnableMergePathsForKitKatAndAboveProperty.PropertyName] = MapEnableMergePathsForKitKatAndAbove,
-        [LottieView.HardwareAccelerationProperty.PropertyName] = MapHardwareAcceleration,
-        [LottieView.TintColorProperty.PropertyName] = MapTintColor,
-        //[LottieView.AutoPlayProperty.PropertyName] = MapAutoPlay,
-    };
-
-    public static CommandMapper<LottieView, LottieViewHandler> LottieViewCommandMapper = new(ViewCommandMapper)
-    {
-        [nameof(LottieView.Play)] = MapPlay,
-        [nameof(LottieView.Pause)] = MapPause,
-        [nameof(LottieView.Stop)] = MapStop,
-        [nameof(LottieView.Resume)] = MapResume,
-    };
-
     protected AnimatorListener? AnimatorListener { get; set; }
     protected AnimatorUpdateListener? AnimatorUpdateListener { get; set; }
     protected LottieOnCompositionLoadedListener? LottieOnCompositionLoadedListener { get; set; }
     protected LottieFailureListener? LottieFailureListener { get; set; }
-
-    public LottieViewHandler()
-        : base(LottieViewMapper, LottieViewCommandMapper)
-    {
-    }
-
-    public LottieViewHandler(IPropertyMapper<LottieView, LottieViewHandler>? mapper)
-        : base(mapper ?? LottieViewMapper, LottieViewCommandMapper)
-    {
-
-    }
-
-    public LottieViewHandler(IPropertyMapper<LottieView, LottieViewHandler>? mapper, CommandMapper<LottieView, LottieViewHandler>? commandMapper)
-        : base(mapper ?? LottieViewMapper, commandMapper ?? LottieViewCommandMapper)
-    {
-
-    }
 
     protected override LottieAnimationView CreatePlatformView()
     {
