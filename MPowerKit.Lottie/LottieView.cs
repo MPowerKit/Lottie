@@ -67,7 +67,7 @@ public class LottieView : View
     /// <summary>
     /// Called when the Lottie animation is loaded with the Lottie Composition as parameter
     /// </summary>
-    public event EventHandler<object?>? AnimationLoaded;
+    public event EventHandler<float>? AnimationLoaded;
 
     /// <summary>
     /// Called when the Source was changed
@@ -125,13 +125,13 @@ public class LottieView : View
     }
 
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public void SendAnimationLoaded(object? animation)
+    public void SendAnimationLoaded(float? duration)
     {
-        IsAnimationLoaded = animation is not null;
-#if ANDROID
-        Duration = (animation as Com.Airbnb.Lottie.LottieComposition)?.Duration ?? 0f;
-#endif
-        AnimationLoaded?.Invoke(this, animation);
+        IsAnimationLoaded = duration is not null;
+
+        Duration = duration ?? 0f;
+
+        AnimationLoaded?.Invoke(this, Duration);
 
         if (IsAnimationLoaded && AutoPlay && State is AnimationState.Stopped or AnimationState.Finished)
         {

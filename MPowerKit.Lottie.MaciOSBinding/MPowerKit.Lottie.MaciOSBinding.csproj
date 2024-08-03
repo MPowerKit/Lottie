@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<IsBindingProject>true</IsBindingProject>
+		<NoBindingEmbedding>true</NoBindingEmbedding>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
+	</PropertyGroup>
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<NativeReference Include="..\LottieProxy\Output\LottieProxy.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
+</Project>

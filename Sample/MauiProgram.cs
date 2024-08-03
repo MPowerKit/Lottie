@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
-
 using MPowerKit.Lottie;
 
 namespace Sample
@@ -20,7 +19,7 @@ namespace Sample
                 })
                 .ConfigureMauiHandlers(h =>
                 {
-                    h.AddHandler(typeof(AnimationView), typeof(AnimationViewRenderer));
+                    //h.AddHandler(typeof(AnimationView), typeof(AnimationViewRenderer));
                     h.AddHandler(typeof(LottieView), typeof(LottieViewHandler));
                 });
 

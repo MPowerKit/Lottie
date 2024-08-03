@@ -102,7 +102,7 @@ public class LottieViewHandler : ViewHandler<LottieView, LottieAnimationView>
 
         LottieOnCompositionLoadedListener = new LottieOnCompositionLoadedListener
         {
-            Loaded = VirtualView.SendAnimationLoaded
+            Loaded = (composition) => VirtualView.SendAnimationLoaded(composition?.Duration)
         };
         platformView.AddLottieOnCompositionLoadedListener(LottieOnCompositionLoadedListener);
 
@@ -116,6 +116,11 @@ public class LottieViewHandler : ViewHandler<LottieView, LottieAnimationView>
     protected override void DisconnectHandler(LottieAnimationView platformView)
     {
         base.DisconnectHandler(platformView);
+
+        if (platformView.IsAnimating)
+        {
+            platformView.CancelAnimation();
+        }
 
         platformView.RemoveAnimatorListener(AnimatorListener);
         AnimatorListener?.Dispose();
@@ -216,10 +221,11 @@ public class LottieViewHandler : ViewHandler<LottieView, LottieAnimationView>
             : LayerType.None, null);
     }
 
-    static int i = 0;
     public static void MapAutoPlay(LottieViewHandler handler, LottieView view)
     {
-        if (!view.AutoPlay || handler.PlatformView.IsAnimating || view.State is AnimationState.Playing or AnimationState.Paused) return;
+        if (!view.AutoPlay
+            || handler.PlatformView.IsAnimating
+            || view.State is AnimationState.Playing or AnimationState.Paused) return;
 
         switch (view.State)
         {
