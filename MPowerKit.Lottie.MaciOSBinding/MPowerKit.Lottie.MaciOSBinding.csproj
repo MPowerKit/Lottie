@@ -19,13 +19,22 @@
 		<PackageTags>lottie;image;animation;json;lottie maui;lottie ios;lottie mac;adobe after effects</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
 		<ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
 		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
 	</ItemGroup>
-	<ItemGroup>
-		<NativeReference Include="..\LottieProxy\Output\LottieProxy.xcframework">
+
+	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+		<NativeReference Include="..\LottieProxy\Output\LottieProxy-ios.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+		<NativeReference Include="..\LottieProxy\Output\LottieProxy-maccatalyst.xcframework">
 			<Kind>Framework</Kind>
 			<SmartLink>False</SmartLink>
 		</NativeReference>

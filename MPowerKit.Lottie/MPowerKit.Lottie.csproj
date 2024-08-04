@@ -28,6 +28,7 @@
 		<PackageTags>lottie;image;animation;json;lottie maui;lottie ios;lottie mac;lottie android;adobe after effects</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
