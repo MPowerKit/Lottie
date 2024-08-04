@@ -27,12 +27,6 @@
                     SemanticProperties.Hint="Counts the number of times you click"
                     Text="Click me" />
 
-            <!--<lottie:AnimationView Animation="cat.json"
-                                  AnimationSource="AssetOrBundle"
-                                  HeightRequest="150"
-                                  RepeatMode="Infinite"
-                                  WidthRequest="250" />-->
-
             <lottie:LottieView HeightRequest="150"
                                RepeatMode="Infinite"
                                Source="cat.json"

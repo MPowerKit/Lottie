@@ -41,7 +41,12 @@ public partial class LottieViewHandler : ViewHandler<LottieView, CompatibleAnima
 
         view.SendSourceChanged();
 
-        handler.PlatformView?.TrySetAnimation(view.Source, view);
+        handler.PlatformView?.TrySetAnimation(view.Source,view, duration =>
+        {
+            view.SendAnimationLoaded(duration);
+
+            MapTintColor(handler, view);
+        });
 
         MapAutoPlay(handler, view);
     }
@@ -126,7 +131,8 @@ public partial class LottieViewHandler : ViewHandler<LottieView, CompatibleAnima
     {
         if (view.TintColor is null)
         {
-            handler.PlatformView.SetColorValue(UIKit.UIColor.Clear, new CompatibleAnimationKeypath("**"));
+            // at the moment there is no any option to unset tint color
+            //handler.PlatformView.SetColorValue(UIKit.UIColor.Clear, new CompatibleAnimationKeypath("**"));
             return;
         }
 
@@ -135,7 +141,7 @@ public partial class LottieViewHandler : ViewHandler<LottieView, CompatibleAnima
 
     public static void MapPlay(LottieViewHandler handler, LottieView view, object? args)
     {
-        if (view.State is AnimationState.Playing or AnimationState.Paused/* || !view.IsLoaded*/) return;
+        if (view.State is AnimationState.Playing or AnimationState.Paused || !view.IsLoaded) return;
 
         handler.PlatformView.PlayWithCompletion(completed =>
         {
