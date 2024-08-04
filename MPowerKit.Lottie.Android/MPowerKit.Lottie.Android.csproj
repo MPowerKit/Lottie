@@ -6,10 +6,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>MPowerKit.Lottie.MaciOSBinding</Title>
-		<Version>6.4.1.1</Version>
+		<Title>MPowerKit.Lottie.Android</Title>
+		<Version>6.4.1</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
-		<Description>>Lottie library for Android that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
+		<Description>Lottie library for Android that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
 		<Copyright>MPowerKit</Copyright>
 		<PackageProjectUrl>https://github.com/MPowerKit/Lottie</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MPowerKit/Lottie</RepositoryUrl>

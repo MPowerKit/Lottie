@@ -3,43 +3,38 @@ using System.Globalization;
 
 namespace MPowerKit.Lottie;
 
-public abstract class StringTypeConverter : TypeConverter
+public class LottieAnimationSourceConverter : TypeConverter
 {
-    public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType) =>
-        sourceType == typeof(string);
-
-    public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType) =>
-        destinationType == typeof(string);
-
-    public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value) =>
-        ConvertFromStringCore(value?.ToString());
-
-    public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType) =>
-        ConvertToStringCore(value);
-
-    protected abstract object? ConvertFromStringCore(string? value);
-
-    protected virtual string? ConvertToStringCore(object? value) => throw new NotImplementedException();
-}
-
-public class LottieAnimationSourceConverter : StringTypeConverter
-{
-    protected override object? ConvertFromStringCore(string? value)
+    public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
     {
-        if (string.IsNullOrWhiteSpace(value))
-            throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(LottieAnimationSource)}");
-
-        if (Uri.TryCreate(value, UriKind.Absolute, out var uri) && uri.Scheme != "file")
-            return LottieAnimationSource.FromUri(uri);
-
-        return LottieAnimationSource.FromFile(value!);
+        return sourceType == typeof(string);
     }
 
-    protected override string? ConvertToStringCore(object? value) =>
-        value switch
+    public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
+    {
+        return destinationType == typeof(string);
+    }
+
+    public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
+    {
+        var text = value?.ToString();
+
+        if (string.IsNullOrWhiteSpace(text))
+            throw new InvalidOperationException($"Cannot convert \"{value}\" into {typeof(LottieAnimationSource)}");
+
+        if (Uri.TryCreate(text, UriKind.Absolute, out var uri) && uri.Scheme != "file")
+            return LottieAnimationSource.FromUri(uri);
+
+        return LottieAnimationSource.FromFile(text!);
+    }
+
+    public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
+    {
+        return value switch
         {
             FileLottieAnimationSource fas => fas.File,
             UriLottieAnimationSource uas => uas.Uri?.ToString(),
             _ => throw new NotSupportedException()
         };
+    }
 }

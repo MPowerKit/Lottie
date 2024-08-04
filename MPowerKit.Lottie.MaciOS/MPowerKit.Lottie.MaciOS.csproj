@@ -4,15 +4,15 @@
 		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
 		<IsBindingProject>true</IsBindingProject>
 		<NoBindingEmbedding>true</NoBindingEmbedding>
-		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>MPowerKit.Lottie.MaciOSBinding</Title>
+		<Title>MPowerKit.Lottie.MaciOS</Title>
 		<Version>4.5.0</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
-		<Description>Lottie library for Mac Catalyst and iOS that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
+		<Description>Lottie library for iOS and Mac Catalyst that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
 		<Copyright>MPowerKit</Copyright>
 		<PackageProjectUrl>https://github.com/MPowerKit/Lottie</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/MPowerKit/Lottie</RepositoryUrl>

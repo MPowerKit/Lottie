@@ -37,6 +37,21 @@ public abstract class LottieAnimationSource : Element
         if (bindable is LottieAnimationSource source)
             source._weakEventManager.HandleEvent(source, EventArgs.Empty, nameof(SourceChanged));
     }
+
+    public static implicit operator LottieAnimationSource(string source)
+    {
+        return Uri.TryCreate(source, UriKind.Absolute, out var uri) && uri.Scheme != "file"
+            ? FromUri(uri)
+            : FromFile(source);
+    }
+
+    public static implicit operator LottieAnimationSource(Uri uri)
+    {
+        if (uri is null) return null;
+        if (!uri.IsAbsoluteUri) throw new ArgumentException("uri is relative");
+
+        return FromUri(uri);
+    }
 }
 
 public class FileLottieAnimationSource : LottieAnimationSource

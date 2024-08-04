@@ -18,8 +18,8 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>-->
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>MPowerKit.Lottie.MaciOSBinding</Title>
-		<Version>1.0.0</Version>
+		<Title>MPowerKit.Lottie</Title>
+		<Version>1.0.2</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
 		<Description>Lottie .NET MAUI library that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
 		<Copyright>MPowerKit</Copyright>
@@ -36,22 +36,22 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
-	  <ProjectReference Include="..\MPowerKit.Lottie.AndroidBinding\MPowerKit.Lottie.AndroidBinding.csproj" />
+	  <ProjectReference Include="..\MPowerKit.Lottie.Android\MPowerKit.Lottie.Android.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('ios')) OR $(TargetFramework.Contains('maccatalyst'))">
-	  <ProjectReference Include="..\MPowerKit.Lottie.MaciOSBinding\MPowerKit.Lottie.MaciOSBinding.csproj" />
+	  <ProjectReference Include="..\MPowerKit.Lottie.MaciOS\MPowerKit.Lottie.MaciOS.csproj" />
 	</ItemGroup>
 
 	<!--<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
-	  <Reference Include="MPowerKit.Lottie.iOSBinding">
-	    <HintPath>..\MPowerKit.Lottie.iOSBinding\bin\Debug\net8.0-ios\MPowerKit.Lottie.iOSBinding.dll</HintPath>
+	  <Reference Include="MPowerKit.Lottie.MaciOS">
+	    <HintPath>..\MPowerKit.Lottie.MaciOS\bin\Debug\net8.0-ios\MPowerKit.Lottie.MaciOS.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
-	  <Reference Include="MPowerKit.Lottie.iOSBinding">
-	    <HintPath>..\MPowerKit.Lottie.iOSBinding\bin\Debug\net8.0-maccatalyst\MPowerKit.Lottie.iOSBinding.dll</HintPath>
+	  <Reference Include="MPowerKit.Lottie.MaciOS">
+	    <HintPath>..\MPowerKit.Lottie.MaciOS\bin\Debug\net8.0-maccatalyst\MPowerKit.Lottie.MaciOS.dll</HintPath>
 	  </Reference>
 	</ItemGroup>-->
 

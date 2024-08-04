@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.Lottie", "MPowerK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{C5D6E58D-D430-4368-8C8D-9DF2ABE9C5B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.Lottie.AndroidBinding", "MPowerKit.Lottie.AndroidBinding\MPowerKit.Lottie.AndroidBinding.csproj", "{26D08E75-39EC-4102-B438-2C424A239F13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.Lottie.Android", "MPowerKit.Lottie.Android\MPowerKit.Lottie.Android.csproj", "{26D08E75-39EC-4102-B438-2C424A239F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.Lottie.MaciOSBinding", "MPowerKit.Lottie.MaciOSBinding\MPowerKit.Lottie.MaciOSBinding.csproj", "{95395B98-09BD-4706-9462-1222013CC47E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.Lottie.MaciOS", "MPowerKit.Lottie.MaciOS\MPowerKit.Lottie.MaciOS.csproj", "{95395B98-09BD-4706-9462-1222013CC47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
