@@ -1,6 +1,8 @@
 # <img src="icon.png" width="70" height="70" /> MPowerKit.Lottie
 #### This is a .NET MAUI and .NET Native library that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/bodymovin/bodymovin) and renders them natively!
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alexdobrynin)
+
 Inspired by [BaseFlow's](https://github.com/Baseflow/LottieXamarin) Xamarin library, but ported for .NET MAUI and using latest native libraries. Added some extra features like ```HardwareAcceleration```, ```State``` of the animation and ```TintColor```.
 
 ## Support
