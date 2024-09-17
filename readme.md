@@ -100,6 +100,8 @@ Your Xaml:
                 Stop="{Binding StopAction, Mode=OneWayToSource}" />
 ```
 
+All list of bindable properties you may find here: https://github.com/MPowerKit/Lottie/blob/995df55475620e5708da9dcfe9bbef073a75559c/MPowerKit.Lottie/LottieView.cs#L163
+
 ### Using Lottie for Android
 Read the official docs [here](https://airbnb.io/lottie/#/android?id=sample-app)
 
