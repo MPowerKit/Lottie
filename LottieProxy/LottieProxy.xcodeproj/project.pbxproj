@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0471EF092C5D7E750028A07E /* LottieProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0471EF082C5D7E750028A07E /* LottieProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0474B0E62D0073390000C979 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0474B0E52D0073390000C979 /* PrivacyInfo.xcprivacy */; };
 		04B9A63C2C5D7ED700C61B66 /* LottieProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9A63B2C5D7ED700C61B66 /* LottieProxy.swift */; };
 		04B9A63F2C5D809A00C61B66 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 04B9A63E2C5D809A00C61B66 /* Lottie */; };
 /* End PBXBuildFile section */
@@ -15,6 +16,7 @@
 /* Begin PBXFileReference section */
 		0471EF052C5D7E750028A07E /* LottieProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LottieProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0471EF082C5D7E750028A07E /* LottieProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieProxy.h; sourceTree = "<group>"; };
+		0474B0E52D0073390000C979 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		04B9A63B2C5D7ED700C61B66 /* LottieProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +53,7 @@
 			children = (
 				0471EF082C5D7E750028A07E /* LottieProxy.h */,
 				04B9A63B2C5D7ED700C61B66 /* LottieProxy.swift */,
+				0474B0E52D0073390000C979 /* PrivacyInfo.xcprivacy */,
 			);
 			path = LottieProxy;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0474B0E62D0073390000C979 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

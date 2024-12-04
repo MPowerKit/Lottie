@@ -19,7 +19,7 @@
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>MPowerKit.Lottie</Title>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
 		<Description>Lottie .NET MAUI library that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively</Description>
 		<Copyright>MPowerKit</Copyright>
