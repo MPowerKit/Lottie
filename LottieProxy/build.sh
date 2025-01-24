@@ -14,4 +14,4 @@ xcodebuild -create-xcframework -archive Output/Output-iphoneos.xcarchive -framew
 xcodebuild -create-xcframework -archive Output/Output-maccatalyst.xcarchive -framework LottieProxy.framework -output Output/LottieProxy-maccatalyst.xcframework
 
 echo "sharpie bind"
-sharpie bind --sdk=iphoneos18.1 --output="Output" --namespace="Com.Airbnb.Lottie" --scope="Output/LottieProxy-ios.xcframework/ios-arm64/LottieProxy.framework/Headers" "Output/LottieProxy-ios.xcframework/ios-arm64/LottieProxy.framework/Headers/LottieProxy-Swift.h"
+sharpie bind --sdk=iphoneos18.2 --output="Output" --namespace="Com.Airbnb.Lottie" --scope="Output/LottieProxy-ios.xcframework/ios-arm64/LottieProxy.framework/Headers" "Output/LottieProxy-ios.xcframework/ios-arm64/LottieProxy.framework/Headers/LottieProxy-Swift.h"

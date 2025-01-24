@@ -136,8 +136,6 @@ public partial class LottieViewHandler : ViewHandler<LottieView, LottieAnimation
 
     public static void MapSpeed(LottieViewHandler handler, LottieView view)
     {
-        if (view.Speed <= 0) return;
-
         handler.PlatformView.Speed = view.Speed;
     }
 

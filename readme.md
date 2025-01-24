@@ -19,9 +19,9 @@ If you feel the lack of functionality, feel free to open a PRs.
 
 ## Download
 
-- Android: [![NuGet Badge](https://buildstats.info/nuget/MPowerKit.Lottie.Android)](https://www.nuget.org/packages/MPowerKit.Lottie.Android)
-- iOS / Mac Catalyst: [![NuGet Badge](https://buildstats.info/nuget/MPowerKit.Lottie.MaciOS)](https://www.nuget.org/packages/MPowerKit.Lottie.MaciOS) (This library has limited set of functionality, but enough to play the animation)
-- .NET MAUI: [![NuGet Badge](https://buildstats.info/nuget/MPowerKit.Lottie)](https://www.nuget.org/packages/MPowerKit.Lottie)
+- Android: [![NuGet](https://img.shields.io/nuget/v/MPowerKit.Lottie.Android)](https://www.nuget.org/packages/MPowerKit.Lottie.Android)
+- iOS / Mac Catalyst: [![NuGet](https://img.shields.io/nuget/v/MPowerKit.Lottie.MaciOS)](https://www.nuget.org/packages/MPowerKit.Lottie.MaciOS) (This library has limited set of functionality, but enough to play the animation)
+- .NET MAUI: [![NuGet](https://img.shields.io/nuget/v/MPowerKit.Lottie)](https://www.nuget.org/packages/MPowerKit.Lottie)
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand. They say a picture is worth 1,000 words so here are 13,000:
 
