@@ -112,7 +112,7 @@ public class UriLottieAnimationSource : LottieAnimationSource
     {
         if (IsEmpty) throw new InvalidOperationException("Uri is empty.");
 
-        return Task.FromResult<object>(Uri!.AbsolutePath);
+        return Task.FromResult<object>(Uri!.AbsoluteUri);
     }
 
     public override bool IsEmpty => Uri is null;
