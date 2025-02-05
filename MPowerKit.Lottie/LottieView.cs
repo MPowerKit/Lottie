@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Reflection;
 using System.Windows.Input;
 
 namespace MPowerKit.Lottie;
@@ -122,6 +121,9 @@ public class LottieView : View
     public void SendAnimationUpdated(float progress)
     {
         AnimationUpdated?.Invoke(this, progress);
+
+        if (AnimationUpdatedCommand?.CanExecute(progress) is true)
+            AnimationUpdatedCommand?.Execute(progress);
     }
 
     [EditorBrowsable(EditorBrowsableState.Never)]
@@ -488,6 +490,21 @@ public class LottieView : View
         BindableProperty.Create(
             nameof(Source),
             typeof(LottieAnimationSource),
+            typeof(LottieView)
+            );
+    #endregion
+
+    #region AnimationUpdatedCommand
+    public ICommand AnimationUpdatedCommand
+    {
+        get { return (ICommand)GetValue(AnimationUpdatedCommandProperty); }
+        set { SetValue(AnimationUpdatedCommandProperty, value); }
+    }
+
+    public static readonly BindableProperty AnimationUpdatedCommandProperty =
+        BindableProperty.Create(
+            nameof(AnimationUpdatedCommand),
+            typeof(ICommand),
             typeof(LottieView)
             );
     #endregion

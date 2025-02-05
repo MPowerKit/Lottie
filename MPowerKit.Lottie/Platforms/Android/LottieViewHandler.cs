@@ -47,7 +47,7 @@ public partial class LottieViewHandler : ViewHandler<LottieView, LottieAnimation
 
         AnimatorUpdateListener = new AnimatorUpdateListener
         {
-            Updated = VirtualView.SendAnimationUpdated
+            Updated = (progress) => VirtualView.SendAnimationUpdated(progress)
         };
         platformView.AddAnimatorUpdateListener(AnimatorUpdateListener);
 
@@ -179,7 +179,6 @@ public partial class LottieViewHandler : ViewHandler<LottieView, LottieAnimation
         switch (view.State)
         {
             case AnimationState.Stopped:
-                Console.WriteLine("Playing");
                 handler.PlatformView.SetLayerType(view.HardwareAcceleration ? LayerType.Hardware : LayerType.None, null);
                 handler.PlatformView?.PlayAnimation();
                 break;

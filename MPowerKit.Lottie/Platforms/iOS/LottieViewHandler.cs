@@ -172,6 +172,7 @@ public partial class LottieViewHandler : ViewHandler<LottieView, CompatibleAnima
         if (view.State is not AnimationState.Playing) return;
 
         handler.PlatformView.Pause();
+        view.SendAnimationUpdated((float)handler.PlatformView.CurrentProgress);
         view.SendAnimationPaused();
     }
 }
